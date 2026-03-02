@@ -133,7 +133,7 @@
       <div class="section-header reveal">
         <span class="section-label" style="color:#3B82F6">THREE-LAYER ARCHITECTURE</span>
         <h2>The ARIA <span class="gradient-text-multi">Platform Stack</span></h2>
-        <p class="section-desc">A three-layer system built on Microsoft Azure — from the chat interface within the Engagement Hub, through the FastAPI middleware and Microsoft Agent Framework, down to Cosmos DB and Azure DevOps.</p>
+        <p class="section-desc">A three-layer system built on Microsoft Azure — from the chat interface within the Engagement Hub, through the FastAPI middleware and Microsoft Agent Framework. ARIA communicates with Engagement Hub services, which broker access to Cosmos DB, ADO, and other data sources.</p>
       </div>
       <div class="architecture-stack">
 
@@ -209,7 +209,7 @@
                 <div class="node-icon" data-color="#F59E0B"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg></div></div><span>Key Vault</span></div>
                 <div class="node-icon" data-color="#F59E0B"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div></div><span>Audit Logs</span></div>
               </div>
-              <div class="layer-note">Aggregated project data from ADO, EH, SOWs, SharePoint, SVD • Delta sync on login • Immutable audit trail • 2-year retention</div>
+              <div class="layer-note">EH services aggregate project data from ADO, SOWs, SharePoint, SVD into Cosmos DB • ARIA accesses via EH • Delta sync on login • Immutable audit trail • 2-year retention</div>
             </div>
           </div>
         </div>
@@ -254,7 +254,7 @@
         <div class="step-card reveal" data-color="#14B8A6">
           <div class="step-top">
             <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(20,184,166,0.15),rgba(20,184,166,0.05));border-color:rgba(20,184,166,0.3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></div>
-            <div class="step-body"><span class="step-num" style="color:#14B8A6">STAGE 1 — PULL</span><h3>Pull Work Item Context</h3><p>Retrieve the work item from Cosmos DB: title, description, discussions, attachments, metadata, and linked SVD decisions.</p></div>
+            <div class="step-body"><span class="step-num" style="color:#14B8A6">STAGE 1 — PULL</span><h3>Pull Work Item Context</h3><p>Retrieve the work item via Engagement Hub services: title, description, discussions, attachments, metadata, and linked SVD decisions. EH brokers data from Cosmos DB on ARIA's behalf.</p></div>
           </div>
           <div class="step-flow"><div class="step-flow-line"></div><svg width="60" height="8" viewBox="0 0 60 8"><circle r="2" fill="#14B8A6" opacity="0.6"><animateMotion dur="2s" repeatCount="indefinite" path="M0,4 L60,4"/></circle><line x1="0" y1="4" x2="60" y2="4" stroke="#14B8A6" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="3 3"><animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1s" repeatCount="indefinite"/></line></svg><div class="step-flow-line"></div></div>
         </div>
@@ -268,7 +268,7 @@
         <div class="step-card reveal" data-color="#8B5CF6">
           <div class="step-top">
             <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(139,92,246,0.05));border-color:rgba(139,92,246,0.3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></div>
-            <div class="step-body"><span class="step-num" style="color:#8B5CF6">STAGE 3 — CLARIFY</span><h3>Clarify Context</h3><p>Ask exactly three targeted clarifying questions using RAG against the full Cosmos DB project context. Questions constrained to what is genuinely unknown.</p></div>
+            <div class="step-body"><span class="step-num" style="color:#8B5CF6">STAGE 3 — CLARIFY</span><h3>Clarify Context</h3><p>Ask exactly three targeted clarifying questions using RAG against the full project context via Engagement Hub services. Questions constrained to what is genuinely unknown.</p></div>
           </div>
           <div class="step-flow"><div class="step-flow-line"></div><svg width="60" height="8" viewBox="0 0 60 8"><circle r="2" fill="#8B5CF6" opacity="0.6"><animateMotion dur="2s" repeatCount="indefinite" path="M0,4 L60,4"/></circle><line x1="0" y1="4" x2="60" y2="4" stroke="#8B5CF6" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="3 3"><animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1s" repeatCount="indefinite"/></line></svg><div class="step-flow-line"></div></div>
         </div>
@@ -323,14 +323,14 @@
           <div class="mcp-status"><div class="mcp-status-dot" style="background:#F59E0B"></div><span style="color:rgba(245,158,11,0.5)">CONNECTED</span></div>
         </div>
         <div class="mcp-card reveal" data-color="#EF4444">
-          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div><h4>ADO MCP (User Auth)</h4></div>
-          <p>User-specific PAT token authentication. Direct ADO work item access for Advanced Mode.</p>
-          <div class="mcp-status"><div class="mcp-status-dot" style="background:#EF4444"></div><span style="color:rgba(239,68,68,0.5)">CONNECTED</span></div>
+          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div><h4>ADO MCP (via EH)</h4></div>
+          <p>Work item access routed through Engagement Hub services. EH manages ADO authentication and data retrieval on ARIA's behalf.</p>
+          <div class="mcp-status"><div class="mcp-status-dot" style="background:#EF4444"></div><span style="color:rgba(239,68,68,0.5)">VIA EH</span></div>
         </div>
         <div class="mcp-card reveal" data-color="#10B981">
-          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></div><h4>Cosmos DB</h4></div>
-          <p>High-performance data store. Work items, project docs, SVD data, session state, prompt templates, and audit logs.</p>
-          <div class="mcp-status"><div class="mcp-status-dot" style="background:#10B981"></div><span style="color:rgba(16,185,129,0.5)">CONNECTED</span></div>
+          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></div><h4>Cosmos DB (via EH)</h4></div>
+          <p>High-performance data store accessed through Engagement Hub services. Work items, project docs, SVD data, session state, and audit logs.</p>
+          <div class="mcp-status"><div class="mcp-status-dot" style="background:#10B981"></div><span style="color:rgba(16,185,129,0.5)">VIA EH</span></div>
         </div>
       </div>
     </div>
@@ -369,7 +369,7 @@
         <div class="hub-card reveal" data-color="#8B5CF6"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span>Multi-Tenant Auth</span><p>Engagement Hub session carries tenant context. ARIA inherits authentication at launch — no re-auth needed.</p></div>
         <div class="hub-card reveal" data-color="#14B8A6"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg></div><span>Mobilization Gate</span><p>ARIA button disabled until all Engagement Hub mobilization requirements are marked complete.</p></div>
         <div class="hub-card reveal" data-color="#F59E0B"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg></div><span>Session Persistence</span><p>State persisted per user x task. Close and re-open ARIA for the same task and resume where you left off.</p></div>
-        <div class="hub-card reveal" data-color="#EF4444"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></div><span>Advanced Mode</span><p>Solution Architects get free-form RAG queries against the entire project's Cosmos DB context.</p></div>
+        <div class="hub-card reveal" data-color="#EF4444"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></div><span>Advanced Mode</span><p>Solution Architects get free-form RAG queries against the entire project context, served through Engagement Hub services.</p></div>
         <div class="hub-card reveal" data-color="#10B981"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div><span>REST API Contract</span><p>GET /tasks/{taskId}, PUT /tasks/{userId}/{projectId}, GET /tasks/project/{projectId}</p></div>
       </div>
       <!-- Integration callout -->
@@ -671,8 +671,8 @@
       </div>
       <div class="decisions-grid">
         <div class="decision-card reveal"><div class="decision-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><div><h4>Training Agent</h4><p>Mines project artifacts and resolved work items to auto-generate role-specific training content. Pulls from customer files — BRDs, fit-gap analyses, test scripts — for contextualized, not generic, training.</p></div></div>
-        <div class="decision-card reveal"><div class="decision-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><div><h4>Support Agent</h4><p>First-line triage referencing DevOps work items, configuration history, and customer-specific documentation. Learns from historical ticket patterns to predict post-go-live issues.</p></div></div>
-        <div class="decision-card reveal"><div class="decision-dot" style="background:#14B8A6;box-shadow:0 0 8px #14B8A6"></div><div><h4>Project Management Agent</h4><p>Monitors DevOps boards, sprint velocity, and task dependencies in real time. Tracks billable time and AI token consumption per work item. Automates status reporting.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><div><h4>Support Agent</h4><p>First-line triage referencing work items, configuration history, and customer-specific documentation via EH services. Learns from historical ticket patterns to predict post-go-live issues.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#14B8A6;box-shadow:0 0 8px #14B8A6"></div><div><h4>Project Management Agent</h4><p>Monitors project boards, sprint velocity, and task dependencies via EH services. Tracks billable time and AI token consumption per work item. Automates status reporting.</p></div></div>
         <div class="decision-card reveal"><div class="decision-dot" style="background:#F59E0B;box-shadow:0 0 8px #F59E0B"></div><div><h4>Financial Agent</h4><p>Aggregates billable hours, AI token usage, and delivery velocity for true cost-to-serve. Enables shift from time-and-materials to value-based billing. Real-time margin visibility.</p></div></div>
       </div>
     </div>
@@ -687,8 +687,8 @@
       </div>
       <div class="decisions-grid">
         <div class="decision-card reveal"><div class="decision-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><div><h4>Abandon 80+ bespoke agents</h4><p>Build ARIA as a centralized, generic agent with curated prompts mapped to RSM Velocity actions. 10-week compressed delivery timeline.</p></div></div>
-        <div class="decision-card reveal"><div class="decision-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><div><h4>Engagement Hub remains source of truth</h4><p>Associates' and consultants' day-to-day workflows do not change. ARIA reads from and acts upon EH and DevOps data.</p></div></div>
-        <div class="decision-card reveal"><div class="decision-dot" style="background:#14B8A6;box-shadow:0 0 8px #14B8A6"></div><div><h4>Cosmos DB as performance layer</h4><p>Project data aggregated from ADO, EH, SOWs, SharePoint, and SVD content. Delta sync on every user login. Vector search for RAG.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><div><h4>Engagement Hub remains source of truth</h4><p>Associates' and consultants' day-to-day workflows do not change. ARIA communicates with EH services, which broker access to ADO, Cosmos DB, and other data sources.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#14B8A6;box-shadow:0 0 8px #14B8A6"></div><div><h4>Cosmos DB as performance layer</h4><p>EH services aggregate project data from ADO, SOWs, SharePoint, and SVD content into Cosmos DB. ARIA accesses this data indirectly through EH. Delta sync on every user login.</p></div></div>
         <div class="decision-card reveal"><div class="decision-dot" style="background:#F59E0B;box-shadow:0 0 8px #F59E0B"></div><div><h4>ARIA as button in Engagement Hub</h4><p>Solves multi-tenant auth, inherits project context at launch, and creates seamless design-to-implementation transition.</p></div></div>
         <div class="decision-card reveal"><div class="decision-dot" style="background:#EF4444;box-shadow:0 0 8px #EF4444"></div><div><h4>Auditability as first-class layer</h4><p>Every action logged with full metadata to Cosmos DB. Immutable, 2-year retention. Reconstructable agent decision chains.</p></div></div>
         <div class="decision-card reveal"><div class="decision-dot" style="background:#10B981;box-shadow:0 0 8px #10B981"></div><div><h4>Model flexibility &amp; routing</h4><p>Not hard-coupled to a single LLM. Reasoning tasks route to Claude Sonnet 4 or o3; fast tasks to GPT-4o-mini. Provider swap requires no frontend changes.</p></div></div>
