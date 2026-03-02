@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARIA — AI Research &amp; Implementation Assistant</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="RSM's centralized AI-powered assistant for D365 F&O implementations. One generic agent. Curated methodology. Mapped to RSM Velocity actions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://alcdn.msauth.net/browser/2.38.0/js/msal-browser.min.js"></script>
+</head>
+<body>
+  <!-- ═══ AUTH-GATED CONTENT (hidden until login) ═══ -->
+  <div id="app-content" style="display:none">
+  <!-- ═══ ANIMATED PARTICLE CANVAS ═══ -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="nav-logo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+        </div>
+        <span class="nav-title">ARIA</span>
+        <span class="nav-subtitle">AI Research &amp; Implementation Assistant</span>
+      </div>
+      <div class="nav-links">
+        <a href="#architecture">Architecture</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="#hub">Engagement Hub</a>
+        <a href="#svd-workflow">SVD Workflow</a>
+        <a href="#xpp-pipeline">D365 F&amp;O Pipeline</a>
+        <a href="#guardrails">Guardrails</a>
+        <a href="#value-agents">Value Agents</a>
+        <div class="status-dot"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO SECTION ═══ -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="Media (1).jpg" alt="" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content anim-fade-up">
+      <div class="badge">
+        <div class="badge-dot"></div>
+        <span>RSM AGENTIC TRANSFORMATION</span>
+      </div>
+      <h1 class="hero-title">ARIA</h1>
+      <p class="hero-subtitle">AI Research &amp; Implementation Assistant</p>
+      <p class="hero-desc">RSM's centralized AI-powered assistant for D365 Finance &amp; Operations implementations. One generic agent. RSM's curated best practices and methodology encoded as constrained prompts. Mapped to RSM Velocity actions. Your day-to-day does not change — ARIA makes it faster, more accurate, and fully auditable.</p>
+      <div class="hero-badges">
+        <div class="hero-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8Z"/><circle cx="12" cy="10" r="3"/></svg> One Generic Agent</div>
+        <div class="hero-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg> RSM Methodology</div>
+        <div class="hero-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg> Human-in-the-Loop</div>
+        <div class="hero-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Full Audit Trail</div>
+      </div>
+      <div class="scroll-indicator">
+        <span>SCROLL TO EXPLORE</span>
+        <svg class="bounce" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ THE STRATEGIC PIVOT ═══ -->
+  <section class="section reveal">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label" style="color:#8B5CF6">THE STRATEGIC PIVOT</span>
+        <h2>From 85 Bespoke Agents to <span class="gradient-text-blue-violet">One Platform</span></h2>
+        <p class="section-desc">The rapid evolution of AI tools — particularly Azure D365 MCP and the Microsoft Agent Framework — rendered the multi-agent approach unnecessarily complex. ARIA replaces 85 specialized agents with one centralized, methodology-constrained intelligence layer.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-value" data-target="10" data-suffix=" Wks" style="color:#3B82F6">0 Wks</div>
+          <div class="stat-label">Delivery Timeline</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-value" data-target="85" data-suffix="" style="color:#8B5CF6">0</div>
+          <div class="stat-label">Agents → 1 Platform</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-value" data-target="100000" data-suffix="+" style="color:#14B8A6">0+</div>
+          <div class="stat-label">X++ Objects Vectorized</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-value" data-target="5" data-suffix="" style="color:#F59E0B">0</div>
+          <div class="stat-label">Iteration Cap per Action</div>
+        </div>
+      </div>
+      <div class="cards-grid-3">
+        <div class="glow-card reveal" data-glow="#3B82F6">
+          <div class="glass">
+            <div class="card-header">
+              <div class="card-icon" style="background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+              <h3>Augmentation, Not Replacement</h3>
+            </div>
+            <p>ARIA is an augmentation layer. Associates and consultants continue managing work within the Engagement Hub. ARIA enhances their existing tools through a contextual chat interface.</p>
+          </div>
+        </div>
+        <div class="glow-card reveal" data-glow="#8B5CF6">
+          <div class="glass">
+            <div class="card-header">
+              <div class="card-icon" style="background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg></div>
+              <h3>Centralized Intelligence</h3>
+            </div>
+            <p>RSM's best practices and methodology encoded as constrained prompt templates mapped to RSM Velocity actions. Prevents hallucination and ensures methodology consistency.</p>
+          </div>
+        </div>
+        <div class="glow-card reveal" data-glow="#14B8A6">
+          <div class="glass">
+            <div class="card-header">
+              <div class="card-icon" style="background:rgba(20,184,166,0.1);border-color:rgba(20,184,166,0.2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <h3>Embedded Methodology</h3>
+            </div>
+            <p>The strategic differentiator is RSM Velocity encoded into curated prompts that prevent costly configuration mistakes. ARIA makes methodology accessible, consistent, and auditable.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ARCHITECTURE STACK ═══ -->
+  <section id="architecture" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label" style="color:#3B82F6">THREE-LAYER ARCHITECTURE</span>
+        <h2>The ARIA <span class="gradient-text-multi">Platform Stack</span></h2>
+        <p class="section-desc">A three-layer system built on Microsoft Azure — from the chat interface within the Engagement Hub, through the FastAPI middleware and Microsoft Agent Framework, down to Cosmos DB and Azure DevOps.</p>
+      </div>
+      <div class="architecture-stack">
+
+        <!-- Layer 5: Front-End -->
+        <div class="iso-layer reveal" style="transition-delay:0.1s">
+          <div class="layer-label"><div class="layer-dot" style="background:#3B82F6;box-shadow:0 0 10px rgba(59,130,246,0.5)"></div><span class="layer-name" style="color:rgba(59,130,246,0.8)">FRONTEND / UI</span><span class="layer-sub">— Chat Interface within Engagement Hub</span></div>
+          <div class="layer-platform" style="border-color:rgba(59,130,246,0.35);box-shadow:0 0 40px rgba(59,130,246,0.15),inset 0 1px 0 rgba(255,255,255,0.05)">
+            <div class="grid-overlay"></div>
+            <div class="layer-content">
+              <div class="node-row">
+                <div class="node-icon" data-color="#3B82F6" data-pulse="true"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div></div><span>Chat UI</span></div>
+                <div class="node-icon" data-color="#3B82F6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div><span>Approval Cards</span></div>
+                <div class="node-icon" data-color="#3B82F6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div></div><span>SSE Streaming</span></div>
+                <div class="node-icon" data-color="#3B82F6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div></div><span>Session State</span></div>
+              </div>
+              <div class="layer-note">Next.js 15 + Vercel AI SDK 6 + shadcn/ui + Tailwind CSS 4 + TypeScript</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dataflow-svg" data-color="#3B82F6"></div>
+
+        <!-- Layer 4: API Layer -->
+        <div class="iso-layer reveal" style="transition-delay:0.2s">
+          <div class="layer-label"><div class="layer-dot" style="background:#8B5CF6;box-shadow:0 0 10px rgba(139,92,246,0.5)"></div><span class="layer-name" style="color:rgba(139,92,246,0.8)">API / MIDDLEWARE</span><span class="layer-sub">— FastAPI + Session Management</span></div>
+          <div class="layer-platform" style="border-color:rgba(139,92,246,0.35);box-shadow:0 0 40px rgba(139,92,246,0.15),inset 0 1px 0 rgba(255,255,255,0.05)">
+            <div class="grid-overlay"></div>
+            <div class="layer-content">
+              <div class="node-row">
+                <div class="node-icon" data-color="#8B5CF6" data-pulse="true"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg></div></div><span>FastAPI</span></div>
+                <div class="node-icon" data-color="#8B5CF6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg></div></div><span>MSAL Auth</span></div>
+                <div class="node-icon" data-color="#8B5CF6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div></div><span>Session Mgmt</span></div>
+                <div class="node-icon" data-color="#8B5CF6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div></div><span>Telemetry</span></div>
+                <div class="node-icon" data-color="#8B5CF6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div></div><span>SSE Router</span></div>
+              </div>
+              <div class="layer-note">FastAPI + Uvicorn • Per-user x project sessions • Token tracking • SSE via AI SDK Data Stream Protocol</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dataflow-svg" data-color="#8B5CF6"></div>
+
+        <!-- Layer 3: Agent Framework -->
+        <div class="iso-layer reveal" style="transition-delay:0.3s">
+          <div class="layer-label"><div class="layer-dot" style="background:#14B8A6;box-shadow:0 0 10px rgba(20,184,166,0.5)"></div><span class="layer-name" style="color:rgba(20,184,166,0.8)">AGENT ORCHESTRATION</span><span class="layer-sub">— Microsoft Agent Framework + Dapr</span></div>
+          <div class="layer-platform" style="border-color:rgba(20,184,166,0.35);box-shadow:0 0 40px rgba(20,184,166,0.15),inset 0 1px 0 rgba(255,255,255,0.05)">
+            <div class="grid-overlay"></div>
+            <div class="layer-content">
+              <div class="node-row">
+                <div class="node-icon" data-color="#14B8A6" data-pulse="true"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8Z"/><circle cx="12" cy="10" r="3"/></svg></div></div><span>Model Router</span></div>
+                <div class="node-icon" data-color="#14B8A6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg></div></div><span>Agent SDK</span></div>
+                <div class="node-icon" data-color="#14B8A6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg></div></div><span>Prompt Library</span></div>
+                <div class="node-icon" data-color="#14B8A6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div></div><span>RAG Engine</span></div>
+                <div class="node-icon" data-color="#14B8A6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div></div><span>Dapr Sidecar</span></div>
+              </div>
+              <div class="layer-note">Single generic agent • Curated prompt templates • Model routing (Claude Sonnet 4 / o3 / GPT-4o-mini) • AKS + Dapr 1.15+</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dataflow-svg" data-color="#14B8A6"></div>
+
+        <!-- Layer 2: Data Layer -->
+        <div class="iso-layer reveal" style="transition-delay:0.4s">
+          <div class="layer-label"><div class="layer-dot" style="background:#F59E0B;box-shadow:0 0 10px rgba(245,158,11,0.5)"></div><span class="layer-name" style="color:rgba(245,158,11,0.8)">DATA LAYER</span><span class="layer-sub">— Cosmos DB + Vector Search</span></div>
+          <div class="layer-platform" style="border-color:rgba(245,158,11,0.35);box-shadow:0 0 40px rgba(245,158,11,0.15),inset 0 1px 0 rgba(255,255,255,0.05)">
+            <div class="grid-overlay"></div>
+            <div class="layer-content">
+              <div class="node-row">
+                <div class="node-icon" data-color="#F59E0B" data-pulse="true"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></div></div><span>Cosmos DB</span></div>
+                <div class="node-icon" data-color="#F59E0B"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div></div><span>Vector Search</span></div>
+                <div class="node-icon" data-color="#F59E0B"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div></div><span>Delta Sync</span></div>
+                <div class="node-icon" data-color="#F59E0B"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg></div></div><span>Key Vault</span></div>
+                <div class="node-icon" data-color="#F59E0B"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div></div><span>Audit Logs</span></div>
+              </div>
+              <div class="layer-note">Aggregated project data from ADO, EH, SOWs, SharePoint, SVD • Delta sync on login • Immutable audit trail • 2-year retention</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dataflow-svg" data-color="#F59E0B"></div>
+
+        <!-- Layer 1: Source of Truth -->
+        <div class="iso-layer reveal" style="transition-delay:0.5s">
+          <div class="layer-label"><div class="layer-dot" style="background:#EF4444;box-shadow:0 0 10px rgba(239,68,68,0.5)"></div><span class="layer-name" style="color:rgba(239,68,68,0.8)">INFRASTRUCTURE</span><span class="layer-sub">— Azure Kubernetes Service + Integrations</span></div>
+          <div class="layer-platform" style="border-color:rgba(239,68,68,0.3);box-shadow:0 0 40px rgba(239,68,68,0.12),inset 0 1px 0 rgba(255,255,255,0.05)">
+            <div class="grid-overlay"></div>
+            <div class="layer-content">
+              <div class="node-row">
+                <div class="node-icon" data-color="#EF4444" data-pulse="true"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg></div></div><span>AKS</span></div>
+                <div class="node-icon" data-color="#EF4444"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div></div><span>DevOps</span></div>
+                <div class="node-icon" data-color="#EF4444"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div><span>Service Bus</span></div>
+                <div class="node-icon" data-color="#EF4444"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div></div><span>App Insights</span></div>
+                <div class="node-icon" data-color="#EF4444"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg></div></div><span>Container Reg</span></div>
+              </div>
+              <div class="layer-note">AKS with Dapr 1.15+ sidecar • Azure Key Vault • Azure Service Bus • Application Insights • Terraform + GitHub Actions</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Background glow effects -->
+      <div class="arch-glow arch-glow-1"></div>
+      <div class="arch-glow arch-glow-2"></div>
+      <div class="arch-glow arch-glow-3"></div>
+    </div>
+  </section>
+
+  <!-- ═══ WORKFLOW — 4 Steps ═══ -->
+  <section id="workflow" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label" style="color:#14B8A6">CORE REASONING LOOP</span>
+        <h2>Every ARIA Action Follows <span class="gradient-text-teal-blue">Four Stages</span></h2>
+        <p class="section-desc">A standardized four-stage reasoning loop ensures consistency, auditability, and alignment with RSM methodology. The human always approves the final action.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal" data-color="#14B8A6">
+          <div class="step-top">
+            <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(20,184,166,0.15),rgba(20,184,166,0.05));border-color:rgba(20,184,166,0.3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></div>
+            <div class="step-body"><span class="step-num" style="color:#14B8A6">STAGE 1 — PULL</span><h3>Pull Work Item Context</h3><p>Retrieve the work item from Cosmos DB: title, description, discussions, attachments, metadata, and linked SVD decisions.</p></div>
+          </div>
+          <div class="step-flow"><div class="step-flow-line"></div><svg width="60" height="8" viewBox="0 0 60 8"><circle r="2" fill="#14B8A6" opacity="0.6"><animateMotion dur="2s" repeatCount="indefinite" path="M0,4 L60,4"/></circle><line x1="0" y1="4" x2="60" y2="4" stroke="#14B8A6" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="3 3"><animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1s" repeatCount="indefinite"/></line></svg><div class="step-flow-line"></div></div>
+        </div>
+        <div class="step-card reveal" data-color="#3B82F6">
+          <div class="step-top">
+            <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(59,130,246,0.05));border-color:rgba(59,130,246,0.3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+            <div class="step-body"><span class="step-num" style="color:#3B82F6">STAGE 2 — REFERENCE</span><h3>Reference Best Practices</h3><p>Query Microsoft Learn MCP for D365 best practices relevant to the task type. Cross-reference RSM embedded methodology from the prompt library.</p></div>
+          </div>
+          <div class="step-flow"><div class="step-flow-line"></div><svg width="60" height="8" viewBox="0 0 60 8"><circle r="2" fill="#3B82F6" opacity="0.6"><animateMotion dur="2s" repeatCount="indefinite" path="M0,4 L60,4"/></circle><line x1="0" y1="4" x2="60" y2="4" stroke="#3B82F6" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="3 3"><animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1s" repeatCount="indefinite"/></line></svg><div class="step-flow-line"></div></div>
+        </div>
+        <div class="step-card reveal" data-color="#8B5CF6">
+          <div class="step-top">
+            <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(139,92,246,0.05));border-color:rgba(139,92,246,0.3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></div>
+            <div class="step-body"><span class="step-num" style="color:#8B5CF6">STAGE 3 — CLARIFY</span><h3>Clarify Context</h3><p>Ask exactly three targeted clarifying questions using RAG against the full Cosmos DB project context. Questions constrained to what is genuinely unknown.</p></div>
+          </div>
+          <div class="step-flow"><div class="step-flow-line"></div><svg width="60" height="8" viewBox="0 0 60 8"><circle r="2" fill="#8B5CF6" opacity="0.6"><animateMotion dur="2s" repeatCount="indefinite" path="M0,4 L60,4"/></circle><line x1="0" y1="4" x2="60" y2="4" stroke="#8B5CF6" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="3 3"><animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1s" repeatCount="indefinite"/></line></svg><div class="step-flow-line"></div></div>
+        </div>
+        <div class="step-card reveal" data-color="#F59E0B">
+          <div class="step-top">
+            <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(245,158,11,0.05));border-color:rgba(245,158,11,0.3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <div class="step-body"><span class="step-num" style="color:#F59E0B">STAGE 4 — PROPOSE</span><h3>Propose Action</h3><p>Combine best practices with project-specific context and present options. User reviews and approves the proposed action before any MCP call modifies any system.</p></div>
+          </div>
+          <div class="step-flow"><div class="step-flow-line"></div><svg width="60" height="8" viewBox="0 0 60 8"><circle r="2" fill="#F59E0B" opacity="0.6"><animateMotion dur="2s" repeatCount="indefinite" path="M0,4 L60,4"/></circle><line x1="0" y1="4" x2="60" y2="4" stroke="#F59E0B" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="3 3"><animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1s" repeatCount="indefinite"/></line></svg><div class="step-flow-line"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MCP ECOSYSTEM ═══ -->
+  <section id="ecosystem" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label" style="color:#F59E0B">MCP ECOSYSTEM</span>
+        <h2>Connected <span class="gradient-text-amber-red">MCP Servers &amp; Integrations</span></h2>
+        <p class="section-desc">ARIA orchestrates across multiple Model Context Protocol servers — from D365 configuration to Microsoft Learn best practices, the Engagement Hub REST API, and specialized tools.</p>
+      </div>
+      <!-- Central ARIA node -->
+      <div class="mcp-center reveal">
+        <div class="mcp-pulse"></div>
+        <div class="mcp-node">ARIA</div>
+      </div>
+      <!-- Connection SVG -->
+      <div class="mcp-connections">
+        <svg width="100%" height="80" viewBox="0 0 800 80" preserveAspectRatio="xMidYMid meet" id="mcp-svg"></svg>
+      </div>
+      <!-- MCP Cards -->
+      <div class="mcp-grid">
+        <div class="mcp-card reveal" data-color="#3B82F6">
+          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h4>Microsoft D365 MCP</h4></div>
+          <p>System configuration via MCP. Every call requires explicit user approval. Scoped to Vibe instruction set.</p>
+          <div class="mcp-status"><div class="mcp-status-dot" style="background:#3B82F6"></div><span style="color:rgba(59,130,246,0.5)">CONNECTED</span></div>
+        </div>
+        <div class="mcp-card reveal" data-color="#8B5CF6">
+          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(139,92,246,0.15);border-color:rgba(139,92,246,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h4>Microsoft Learn MCP</h4></div>
+          <p>Best practice retrieval for D365 coding standards, extension patterns, and configuration guides.</p>
+          <div class="mcp-status"><div class="mcp-status-dot" style="background:#8B5CF6"></div><span style="color:rgba(139,92,246,0.5)">CONNECTED</span></div>
+        </div>
+        <div class="mcp-card reveal" data-color="#14B8A6">
+          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(20,184,166,0.15);border-color:rgba(20,184,166,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h4>Engagement Hub REST API</h4></div>
+          <p>GET/PUT tasks. Task context at launch, status updates, and linking ARIA outputs back to tasks.</p>
+          <div class="mcp-status"><div class="mcp-status-dot" style="background:#14B8A6"></div><span style="color:rgba(20,184,166,0.5)">CONNECTED</span></div>
+        </div>
+        <div class="mcp-card reveal" data-color="#F59E0B">
+          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(245,158,11,0.15);border-color:rgba(245,158,11,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h4>Custom Configurator MCP</h4></div>
+          <p>Wraps VibeConfigStarterKit instructions. D365 configuration steps and SVD-to-configuration mapping.</p>
+          <div class="mcp-status"><div class="mcp-status-dot" style="background:#F59E0B"></div><span style="color:rgba(245,158,11,0.5)">CONNECTED</span></div>
+        </div>
+        <div class="mcp-card reveal" data-color="#EF4444">
+          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div><h4>ADO MCP (User Auth)</h4></div>
+          <p>User-specific PAT token authentication. Direct ADO work item access for Advanced Mode.</p>
+          <div class="mcp-status"><div class="mcp-status-dot" style="background:#EF4444"></div><span style="color:rgba(239,68,68,0.5)">CONNECTED</span></div>
+        </div>
+        <div class="mcp-card reveal" data-color="#10B981">
+          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></div><h4>Cosmos DB</h4></div>
+          <p>High-performance data store. Work items, project docs, SVD data, session state, prompt templates, and audit logs.</p>
+          <div class="mcp-status"><div class="mcp-status-dot" style="background:#10B981"></div><span style="color:rgba(16,185,129,0.5)">CONNECTED</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ENGAGEMENT HUB ═══ -->
+  <section id="hub" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label" style="color:#8B5CF6">ENGAGEMENT HUB INTEGRATION</span>
+        <h2>Engagement Hub <span class="gradient-text-violet-blue">+ ARIA</span></h2>
+        <p class="section-desc">ARIA is designed as an integrated extension of the Engagement Hub. Each task row has a dedicated ARIA button. Clicking it opens a focused chat session pre-loaded with full task context.</p>
+      </div>
+      <!-- Phase timeline -->
+      <div class="phase-timeline reveal">
+        <h3 class="phase-title">RSM Velocity Project Lifecycle</h3>
+        <div class="phase-row">
+          <div class="phase-item"><div class="phase-tool">Engagement Hub</div><div class="phase-name">Mobilization</div></div>
+          <div class="phase-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+          <div class="phase-item"><div class="phase-tool">Engagement Hub</div><div class="phase-name">Solution Design</div></div>
+          <div class="phase-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+          <div class="phase-item phase-active"><div class="phase-tool">ARIA</div><div class="phase-name active-name">Implementation</div></div>
+          <div class="phase-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+          <div class="phase-item"><div class="phase-tool">Playwright + Jenkins</div><div class="phase-name">Deployment</div></div>
+          <div class="phase-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+          <div class="phase-item"><div class="phase-tool">Monitoring</div><div class="phase-name">Go-Live</div></div>
+        </div>
+      </div>
+      <!-- Hub tools -->
+      <div class="hub-header reveal">
+        <div class="hub-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></div>
+        <div><h3>Engagement Hub</h3><p>Mobilization &amp; Solution Design Platform — Single Source of Truth</p></div>
+      </div>
+      <div class="hub-grid">
+        <div class="hub-card reveal" data-color="#3B82F6"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></div><span>Task Context at Launch</span><p>ARIA button on each task row. Opens pre-loaded with work item details, discussions, linked documents, SVD references.</p></div>
+        <div class="hub-card reveal" data-color="#8B5CF6"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span>Multi-Tenant Auth</span><p>Engagement Hub session carries tenant context. ARIA inherits authentication at launch — no re-auth needed.</p></div>
+        <div class="hub-card reveal" data-color="#14B8A6"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg></div><span>Mobilization Gate</span><p>ARIA button disabled until all Engagement Hub mobilization requirements are marked complete.</p></div>
+        <div class="hub-card reveal" data-color="#F59E0B"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg></div><span>Session Persistence</span><p>State persisted per user x task. Close and re-open ARIA for the same task and resume where you left off.</p></div>
+        <div class="hub-card reveal" data-color="#EF4444"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></div><span>Advanced Mode</span><p>Solution Architects get free-form RAG queries against the entire project's Cosmos DB context.</p></div>
+        <div class="hub-card reveal" data-color="#10B981"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div><span>REST API Contract</span><p>GET /tasks/{taskId}, PUT /tasks/{userId}/{projectId}, GET /tasks/project/{projectId}</p></div>
+      </div>
+      <!-- Integration callout -->
+      <div class="integration-callout reveal">
+        <div class="shimmer-bg"></div>
+        <div class="callout-inner">
+          <div class="callout-text">
+            <h4>ARIA lives inside the Engagement Hub</h4>
+            <p>Launched directly from the EH task list, ARIA automatically inherits customer, tenant, and environment context. The agent begins reasoning immediately — no task selection or navigation step inside ARIA.</p>
+          </div>
+          <div class="callout-badges">
+            <div class="callout-badge violet">Engagement Hub</div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <div class="callout-badge blue">ARIA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRE-SVD / POST-SVD WORKFLOW ═══ -->
+  <section id="svd-workflow" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label" style="color:#10B981">PRE-SVD &amp; POST-SVD WORKFLOW</span>
+        <h2>SVD Sign-Off as <span class="gradient-text-green-blue">Major Milestone</span></h2>
+        <p class="section-desc">The SVD (Solution Verification Document) sign-off triggers a transition in both ARIA's capabilities and access scope. Two distinct workflows, developed as independent workstreams.</p>
+      </div>
+      <div class="cards-grid-2">
+        <div class="glow-card reveal" data-glow="#3B82F6">
+          <div class="glass">
+            <div class="card-header">
+              <div class="card-icon" style="background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg></div>
+              <h3>Pre-SVD: Task Completion</h3>
+            </div>
+            <p>ARIA assists associates and consultants in completing tasks leading to SVD completion. Gathering requirements, validating configurations against RSM Velocity, and resolving open items.</p>
+            <div class="dashboard-features" style="margin-top:0.75rem">
+              <div class="dash-feat"><div class="dash-feat-dot" style="background:#3B82F6"></div>Individual user-level access only</div>
+              <div class="dash-feat"><div class="dash-feat-dot" style="background:#3B82F6"></div>Only assigned tasks visible to ARIA</div>
+              <div class="dash-feat"><div class="dash-feat-dot" style="background:#3B82F6"></div>Quality gate for methodology alignment</div>
+              <div class="dash-feat"><div class="dash-feat-dot" style="background:#3B82F6"></div>ARIA does NOT generate the SVD itself</div>
+            </div>
+          </div>
+        </div>
+        <div class="glow-card reveal" data-glow="#10B981">
+          <div class="glass">
+            <div class="card-header">
+              <div class="card-icon" style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+              <h3>Post-SVD: Implementation Automation</h3>
+            </div>
+            <p>Upon SVD approval, ARIA transitions to automated implementation: generating data entity templates, importing configurations, executing test plans, and system setup.</p>
+            <div class="dashboard-features" style="margin-top:0.75rem">
+              <div class="dash-feat"><div class="dash-feat-dot" style="background:#10B981"></div>Global project-level access</div>
+              <div class="dash-feat"><div class="dash-feat-dot" style="background:#10B981"></div>All project work items accessible</div>
+              <div class="dash-feat"><div class="dash-feat-dot" style="background:#10B981"></div>System-wide configuration assessment</div>
+              <div class="dash-feat"><div class="dash-feat-dot" style="background:#10B981"></div>Automated D365 builds from SVD</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GUARDRAILS & SCOPE CONTROLS ═══ -->
+  <section id="guardrails" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label" style="color:#EF4444">GUARDRAILS &amp; SCOPE CONTROLS</span>
+        <h2>Purpose-Built, <span class="gradient-text-red-amber">Methodology-Constrained</span></h2>
+        <p class="section-desc">ARIA is not a general-purpose AI assistant. It operates within tightly controlled boundaries at every layer, enforced automatically without depending on user discipline.</p>
+      </div>
+      <div class="decisions-grid">
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><div><h4>Task-Scoped Sessions</h4><p>ARIA is bound to a specific Engagement Hub task. No general-purpose chat mode, freeform assistant, or conversational AI outside D365 implementation work.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><div><h4>Four-Stage Reasoning Constraint</h4><p>Every interaction follows Pull → Reference → Clarify → Propose. Off-topic inputs are not actionable within this loop and are rejected gracefully.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#14B8A6;box-shadow:0 0 8px #14B8A6"></div><div><h4>Human-in-the-Loop Approval</h4><p>No MCP call that modifies any system executes without explicit user approval. Every action presented as a structured card with methodology reference.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#F59E0B;box-shadow:0 0 8px #F59E0B"></div><div><h4>Scoped MCP Actions</h4><p>D365 configuration limited to the Vibe/VibeConfigStarterKit instruction set. No arbitrary commands against client environments.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#EF4444;box-shadow:0 0 8px #EF4444"></div><div><h4>Build Retry Limits</h4><p>Autonomous code generation includes hard retry limits (3-5 attempts). Beyond threshold, ARIA stops and escalates to a human developer.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#10B981;box-shadow:0 0 8px #10B981"></div><div><h4>Tenant Isolation &amp; Secrets</h4><p>No client data crosses tenant boundaries. All credentials stored in Azure Key Vault — never in code, environment variables, or prompts.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><div><h4>Full Audit Trail</h4><p>Every interaction logged with timestamp, user ID, project ID, task ID, and outcome. Immutable logs retained for minimum 2 years.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><div><h4>Methodology Traceability</h4><p>Every ARIA recommendation traceable to a specific RSM Velocity step. If unmappable to methodology, it is not surfaced.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ D365 F&O AGENT DEVELOPMENT PIPELINE ═══ -->
+  <section id="xpp-pipeline" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label" style="color:#10B981">D365 F&amp;O DEVELOPMENT PIPELINE</span>
+        <h2>Autonomous <span class="gradient-text-green-blue">D365 F&amp;O Development</span></h2>
+        <p class="section-desc">An end-to-end agent workflow that autonomously creates D365 artifacts — data schemas, business logic, and UI components — and pushes them through build, review, and deployment stages.</p>
+      </div>
+
+      <div class="pipeline-flow">
+
+        <!-- Stage 01: Agent Gathers Context -->
+        <div class="pipeline-stage reveal">
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#10B981;box-shadow:0 0 8px #10B981"></div><span style="color:rgba(16,185,129,0.7)">STAGE 01 — AGENT CONTEXT VIA MCP</span></div>
+          <div class="pipeline-stage-card" data-color="#10B981">
+            <div class="step-top">
+              <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(16,185,129,0.05));border-color:rgba(16,185,129,0.3)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="step-body">
+                <h3>Agent Gathers Context via MCP</h3>
+                <p>Agent queries three MCP sources: PLP Postgres (project lifecycle data), Client Code Postgres (existing D365 codebase), and Custom D365 MCP (RSM coding best practices).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dataflow-svg" data-color="#10B981"></div>
+
+        <!-- Stage 02: Create D365 Artifacts -->
+        <div class="pipeline-stage reveal">
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#F59E0B;box-shadow:0 0 8px #F59E0B"></div><span style="color:rgba(245,158,11,0.7)">STAGE 02 — CREATE D365 F&amp;O ARTIFACTS</span></div>
+          <div class="pipeline-stage-card" data-color="#F59E0B">
+            <div class="step-top">
+              <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(245,158,11,0.05));border-color:rgba(245,158,11,0.3)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <div class="step-body">
+                <h3>Agent Creates D365 F&amp;O Artifacts</h3>
+                <p>Agent determines which layers are needed and generates artifacts across four categories:</p>
+              </div>
+            </div>
+            <div class="dashboard-features" style="margin-top:1rem;gap:0.65rem">
+              <div class="dash-feat" style="font-size:0.8rem"><div class="dash-feat-dot" style="background:#F59E0B"></div><strong style="color:rgba(245,158,11,0.8);margin-right:0.35rem">Data Schema</strong> Tables, Views, EDTs, Base Enums</div>
+              <div class="dash-feat" style="font-size:0.8rem"><div class="dash-feat-dot" style="background:#8B5CF6"></div><strong style="color:rgba(139,92,246,0.8);margin-right:0.35rem">Business Logic</strong> X++ classes, CoC extensions, event handlers</div>
+              <div class="dash-feat" style="font-size:0.8rem"><div class="dash-feat-dot" style="background:#3B82F6"></div><strong style="color:rgba(59,130,246,0.8);margin-right:0.35rem">UI Components</strong> Forms, Menu Items, Tiles, Workspaces</div>
+              <div class="dash-feat" style="font-size:0.8rem"><div class="dash-feat-dot" style="background:#14B8A6"></div><strong style="color:rgba(20,184,166,0.8);margin-right:0.35rem">Misc</strong> Security privileges/duties, labels, resources</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dataflow-svg" data-color="#F59E0B"></div>
+
+        <!-- Stage 03: Build & Retry -->
+        <div class="pipeline-stage reveal">
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#EF4444;box-shadow:0 0 8px #EF4444"></div><span style="color:rgba(239,68,68,0.7)">STAGE 03 — BUILD &amp; RETRY ON AZURE VMs</span></div>
+          <div class="pipeline-stage-card" data-color="#EF4444">
+            <div class="step-top">
+              <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(239,68,68,0.15),rgba(239,68,68,0.05));border-color:rgba(239,68,68,0.3)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+              </div>
+              <div class="step-body">
+                <h3>Build on Azure VMs</h3>
+                <p>Code compiled on Azure-hosted D365 build VMs. On failure, agent auto-analyzes errors and retries (3-5 max). On max retries exceeded: escalates to human developer.</p>
+              </div>
+            </div>
+            <div class="retry-loop">
+              <div class="retry-loop-svg">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                  <circle cx="32" cy="32" r="24" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="6 4" stroke-opacity="0.3" fill="none">
+                    <animateTransform attributeName="transform" type="rotate" from="0 32 32" to="360 32 32" dur="4s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle r="3" fill="#EF4444">
+                    <animateMotion dur="4s" repeatCount="indefinite" path="M32,8 A24,24 0 1,1 31.99,8"/>
+                    <animate attributeName="opacity" values="0.3;1;1;0.3" dur="4s" repeatCount="indefinite"/>
+                  </circle>
+                </svg>
+              </div>
+              <div class="retry-badges">
+                <div class="retry-badge"><span class="retry-count">3-5</span><span class="retry-label">MAX RETRIES</span></div>
+                <div class="retry-badge"><span class="retry-count">AUTO</span><span class="retry-label">ERROR ANALYSIS</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dataflow-svg" data-color="#EF4444"></div>
+
+        <!-- Stage 04: Code Review & Promotion -->
+        <div class="pipeline-stage reveal">
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><span style="color:rgba(59,130,246,0.7)">STAGE 04 — CODE REVIEW &amp; PROMOTION</span></div>
+          <div class="pipeline-stage-card" data-color="#3B82F6">
+            <div class="step-top">
+              <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(59,130,246,0.05));border-color:rgba(59,130,246,0.3)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              </div>
+              <div class="step-body">
+                <h3>Code Review &amp; Promotion</h3>
+                <p>Successful builds trigger automated/human code review on RSM GitHub. Reviewed code promoted from GitHub RSM to client Azure DevOps.</p>
+              </div>
+            </div>
+            <div class="repo-flow">
+              <div class="callout-badge green">GitHub RSM</div>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              <div class="callout-badge blue">Azure DevOps Client</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dataflow-svg" data-color="#8B5CF6"></div>
+
+        <!-- Stage 05: Deploy to Client D365 -->
+        <div class="pipeline-stage reveal">
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><span style="color:rgba(139,92,246,0.7)">STAGE 05 — DEPLOY TO CLIENT D365</span></div>
+          <div class="pipeline-stage-card" data-color="#8B5CF6">
+            <div class="step-top">
+              <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(139,92,246,0.05));border-color:rgba(139,92,246,0.3)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <div class="step-body">
+                <h3>Deploy to Client D365 Environment</h3>
+                <p>Code deployed to the client's D365 Finance &amp; Operations environment via Azure DevOps release pipelines.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dataflow-svg" data-color="#14B8A6"></div>
+
+        <!-- Stage 06: Feedback Loop -->
+        <div class="pipeline-stage reveal">
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#14B8A6;box-shadow:0 0 8px #14B8A6"></div><span style="color:rgba(20,184,166,0.7)">STAGE 06 — FEEDBACK LOOP</span></div>
+          <div class="pipeline-stage-card" data-color="#14B8A6">
+            <div class="step-top">
+              <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(20,184,166,0.15),rgba(20,184,166,0.05));border-color:rgba(20,184,166,0.3)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+              </div>
+              <div class="step-body">
+                <h3>Update Client Code Postgres</h3>
+                <p>Deployed code synced back to Client Code Postgres, keeping agent context current for future iterations. Loop feeds back to Stage 01.</p>
+              </div>
+            </div>
+          </div>
+          <div class="feedback-indicator reveal" style="margin-top:1.5rem">
+            <div class="shimmer-bg"></div>
+            <div class="feedback-inner">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+              <p>Feedback loop — updated code context flows back to <strong style="color:#14B8A6">Stage 01</strong>, enabling the agent to learn from each deployment cycle.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="arch-glow" style="top:15%;left:0;background:rgba(16,185,129,0.06)"></div>
+      <div class="arch-glow" style="top:45%;right:0;background:rgba(239,68,68,0.06)"></div>
+      <div class="arch-glow" style="bottom:15%;left:25%;background:rgba(59,130,246,0.06)"></div>
+    </div>
+  </section>
+
+  <!-- ═══ FUTURE STATE: VALUE AGENTS ═══ -->
+  <section id="value-agents" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label" style="color:#8B5CF6">FUTURE STATE — POST-MVP</span>
+        <h2>Value <span class="gradient-text-violet-blue">Agents Platform</span></h2>
+        <p class="section-desc">Following MVP stabilization, ARIA evolves into a multi-agent platform. Four purpose-built agents extend ARIA's core data infrastructure across the full engagement lifecycle. Sequential rollout — each builds on the one before.</p>
+      </div>
+      <div class="stats-grid" style="margin-bottom:3rem">
+        <div class="stat-item reveal">
+          <div class="stat-value" style="color:#3B82F6;font-size:1.5rem">Training</div>
+          <div class="stat-label">Auto-generated learning content</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-value" style="color:#8B5CF6;font-size:1.5rem">Support</div>
+          <div class="stat-label">First-line issue triage</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-value" style="color:#14B8A6;font-size:1.5rem">Project Mgmt</div>
+          <div class="stat-label">Real-time risk monitoring</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-value" style="color:#F59E0B;font-size:1.5rem">Financial</div>
+          <div class="stat-label">Value-based billing insights</div>
+        </div>
+      </div>
+      <div class="decisions-grid">
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><div><h4>Training Agent</h4><p>Mines project artifacts and resolved work items to auto-generate role-specific training content. Pulls from customer files — BRDs, fit-gap analyses, test scripts — for contextualized, not generic, training.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><div><h4>Support Agent</h4><p>First-line triage referencing DevOps work items, configuration history, and customer-specific documentation. Learns from historical ticket patterns to predict post-go-live issues.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#14B8A6;box-shadow:0 0 8px #14B8A6"></div><div><h4>Project Management Agent</h4><p>Monitors DevOps boards, sprint velocity, and task dependencies in real time. Tracks billable time and AI token consumption per work item. Automates status reporting.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#F59E0B;box-shadow:0 0 8px #F59E0B"></div><div><h4>Financial Agent</h4><p>Aggregates billable hours, AI token usage, and delivery velocity for true cost-to-serve. Enables shift from time-and-materials to value-based billing. Real-time margin visibility.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KEY DECISIONS ═══ -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label" style="color:#EF4444">ARCHITECTURAL DECISIONS</span>
+        <h2>Key <span class="gradient-text-red-amber">Decisions Made</span></h2>
+      </div>
+      <div class="decisions-grid">
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><div><h4>Abandon 80+ bespoke agents</h4><p>Build ARIA as a centralized, generic agent with curated prompts mapped to RSM Velocity actions. 10-week compressed delivery timeline.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><div><h4>Engagement Hub remains source of truth</h4><p>Associates' and consultants' day-to-day workflows do not change. ARIA reads from and acts upon EH and DevOps data.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#14B8A6;box-shadow:0 0 8px #14B8A6"></div><div><h4>Cosmos DB as performance layer</h4><p>Project data aggregated from ADO, EH, SOWs, SharePoint, and SVD content. Delta sync on every user login. Vector search for RAG.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#F59E0B;box-shadow:0 0 8px #F59E0B"></div><div><h4>ARIA as button in Engagement Hub</h4><p>Solves multi-tenant auth, inherits project context at launch, and creates seamless design-to-implementation transition.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#EF4444;box-shadow:0 0 8px #EF4444"></div><div><h4>Auditability as first-class layer</h4><p>Every action logged with full metadata to Cosmos DB. Immutable, 2-year retention. Reconstructable agent decision chains.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#10B981;box-shadow:0 0 8px #10B981"></div><div><h4>Model flexibility &amp; routing</h4><p>Not hard-coupled to a single LLM. Reasoning tasks route to Claude Sonnet 4 or o3; fast tasks to GPT-4o-mini. Provider swap requires no frontend changes.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><div><h4>SVD-gated access escalation</h4><p>Individual-level access pre-SVD, global project access post-SVD. Enforced through the Engagement Hub session context.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><div><h4>Microsoft overlap strategy</h4><p>Continue independent ARIA development. Interface abstraction layer ensures ARIA remains the UI even if underlying config logic swaps to Microsoft's solution.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo small"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></div>
+        <span>ARIA</span>
+      </div>
+      <p>AI Research &amp; Implementation Assistant — RSM Power Factory Agent Development</p>
+      <p class="footer-tech">Powered by Microsoft Agent Framework + Dapr • Azure Cosmos DB • D365 MCP • AKS • v2.1</p>
+    </div>
+  </footer>
+
+  </div><!-- /app-content -->
+
+  <!-- ═══ LOADING STATE ═══ -->
+  <div id="auth-loading" style="position:fixed;inset:0;z-index:9999;background:#08090A;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem">
+    <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#3B82F6,#8B5CF6);display:flex;align-items:center;justify-content:center;color:white">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+    </div>
+    <p id="auth-status" style="font-family:'DM Sans',sans-serif;font-size:0.8rem;color:rgba(255,255,255,0.4)">Authenticating...</p>
+  </div>
+
+  <!-- ═══ MSAL AUTHENTICATION ═══ -->
+  <script>
+    const msalConfig = {
+      auth: {
+        clientId: "98e10bd4-9102-4dbf-abde-31f664aed685",
+        authority: "https://login.microsoftonline.com/organizations",
+        redirectUri: window.location.origin + window.location.pathname,
+      },
+      cache: {
+        cacheLocation: "sessionStorage",
+      }
+    };
+
+    const msalInstance = new msal.PublicClientApplication(msalConfig);
+
+    async function handleAuth() {
+      try {
+        await msalInstance.initialize();
+        const response = await msalInstance.handleRedirectPromise();
+        if (response) {
+          showContent(response.account);
+        } else {
+          const accounts = msalInstance.getAllAccounts();
+          if (accounts.length > 0) {
+            showContent(accounts[0]);
+          } else {
+            document.getElementById("auth-status").textContent = "Redirecting to login...";
+            msalInstance.loginRedirect({ scopes: ["User.Read"] });
+          }
+        }
+      } catch (err) {
+        console.error("MSAL error:", err);
+        document.getElementById("auth-status").textContent = "Auth error: " + err.message;
+      }
+    }
+
+    function showContent(account) {
+      var allowedDomains = ["rsmus.com", "mcgladrey.rsm.net", "junctionsolutions.com"];
+      var email = account.username.toLowerCase();
+      if (!allowedDomains.some(function(d) { return email.endsWith(d); })) {
+        document.getElementById("auth-status").textContent = "Access denied — RSM accounts only";
+        msalInstance.logoutRedirect();
+        return;
+      }
+      document.getElementById("auth-loading").style.display = "none";
+      document.getElementById("app-content").style.display = "block";
+      var s = document.createElement("script");
+      s.src = "script.js";
+      document.body.appendChild(s);
+    }
+
+    function signOut() {
+      msalInstance.logoutRedirect();
+    }
+
+    handleAuth();
+  </script>
+
+</body>
+</html>
